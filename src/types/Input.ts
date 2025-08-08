@@ -18,3 +18,7 @@ export interface ButtonType {
   type: ButtonTy;
   onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
 }
+
+export interface TodoType {
+  name: string;
+}
