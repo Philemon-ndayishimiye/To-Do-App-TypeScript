@@ -22,6 +22,8 @@ export const TodoReducer = (
     case ACTIONS.Add_Todo:
       return [...Todos, { name: action.payload.todo }];
 
+    case ACTIONS.Remove_Todo:
+      return Todos.filter((todo) => todo.name === action.payload.todo); // remeber to put id to every task
     default:
       return Todos;
   }

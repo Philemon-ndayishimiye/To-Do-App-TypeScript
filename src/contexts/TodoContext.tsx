@@ -1,4 +1,4 @@
-import React, { createContext, useReducer, useState } from "react";
+import React, { createContext, useEffect, useReducer, useState } from "react";
 import type { TodoType } from "../types/Input";
 import type { ActionTypes } from "../reducers/TodoReducer";
 import { TodoReducer } from "../reducers/TodoReducer";
@@ -17,7 +17,14 @@ export const TodoContext = createContext<todoContext>({
 });
 
 export const TodoProvider: React.FC<childrenProp> = ({ children }) => {
-  const [todo, dispatch] = useReducer(TodoReducer, [{ name: "philemon" }]);
+  const SavedTodo: TodoType[] = JSON.parse(
+    localStorage.getItem("todos") || "[]"
+  );
+  const [todo, dispatch] = useReducer(TodoReducer, SavedTodo);
+
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todo));
+  }, [todo]);
 
   return (
     <TodoContext.Provider value={{ Todos: todo, dispatch }}>
