@@ -9,7 +9,7 @@ interface inputProp {
 export const Input: React.FC<inputProp> = ({ InputPropData }) => {
   return (
     <input
-      
+      className="w-[320px] px-5 py-2 text-black border"
       type={InputPropData.type}
       placeholder={InputPropData.placeholder}
       name={InputPropData.name}
