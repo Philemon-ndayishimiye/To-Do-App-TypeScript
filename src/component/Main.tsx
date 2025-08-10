@@ -3,7 +3,6 @@ import { Input } from "../component/Input";
 import type { InputType, ButtonType } from "../types/Input";
 import { ButtonComp } from "../component/Button";
 import { useTodo } from "../hooks/useTodo";
-import { ACTIONS } from "../reducers/TodoReducer";
 
 export default function Main() {
   const [todoName, setTodoName] = useState("");
@@ -28,8 +27,8 @@ export default function Main() {
       e.preventDefault();
 
       dispatch({
-        type: ACTIONS.Add_Todo,
-        payload: { todo: todoName },
+        type: "Add Task",
+        payload: { name: todoName },
       });
 
       setTodoName("");
