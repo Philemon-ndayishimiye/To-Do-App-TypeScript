@@ -11,7 +11,7 @@ export const Input = ({
 }: InputType) => {
   return (
     <input
-      className="w-[320px] px-5 py-2 text-black border"
+      className="w-[320px]  px-5 py-3 border border-none  focus:outline-none text-gray-200 "
       type={type}
       placeholder={placeholder}
       name={name}
