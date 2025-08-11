@@ -4,7 +4,7 @@ import Main from "../component/Main";
 export default function Home() {
   return (
     <div>
-      <div className="flex justify-center items-center py-[30px]">
+      <div className="flex justify-center h-dvh  py-[30px]">
         <Main />
       </div>
     </div>

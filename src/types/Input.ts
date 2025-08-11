@@ -24,3 +24,5 @@ export interface TodoType {
   name: string;
   completed: boolean;
 }
+
+// export interface TypeComponent extends 
