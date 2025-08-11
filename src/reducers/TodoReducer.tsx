@@ -8,10 +8,13 @@ export const TodoReducer = (
 ): TodoType[] => {
   switch (action.type) {
     case "Add Task":
-      return [...Todos, { id: Date.now(), name: action.payload.name }];
+      return [
+        ...Todos,
+        { id: Date.now(), name: action.payload.name, completed: false },
+      ];
 
     case "Remove Task":
-      return Todos.filter((todo) => todo.name === action.payload.id); // remeber to put id to every task
+      return Todos.filter((todo) => todo.name === action.payload.id);
     default:
       return Todos;
   }

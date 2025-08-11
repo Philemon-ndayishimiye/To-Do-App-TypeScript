@@ -2,19 +2,21 @@ import React from "react";
 
 import type { InputType } from "../types/Input";
 
-interface inputProp {
-  InputPropData: InputType;
-}
-
-export const Input: React.FC<inputProp> = ({ InputPropData }) => {
+export const Input = ({
+  type,
+  placeholder,
+  name,
+  value,
+  onChange,
+}: InputType) => {
   return (
     <input
       className="w-[320px] px-5 py-2 text-black border"
-      type={InputPropData.type}
-      placeholder={InputPropData.placeholder}
-      name={InputPropData.name}
-      value={InputPropData.value}
-      onChange={InputPropData.onChange}
+      type={type}
+      placeholder={placeholder}
+      name={name}
+      value={value}
+      onChange={onChange}
     />
   );
 };

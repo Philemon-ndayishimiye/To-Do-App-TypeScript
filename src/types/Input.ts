@@ -22,4 +22,5 @@ export interface ButtonType {
 export interface TodoType {
   id: string | number;
   name: string;
+  completed: boolean;
 }
