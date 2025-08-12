@@ -65,8 +65,7 @@ export default function Main() {
               <div>
                 <IconComp
                   icon={<MdDelete />}
-                  Onclick={(e: React.MouseEvent<SVGAElement>) => {
-                    e.preventDefault();
+                  OnClick={(e: React.MouseEvent<HTMLDivElement>) => {
                     dispatch({
                       type: "Remove Task",
                       payload: { id: todos.id },

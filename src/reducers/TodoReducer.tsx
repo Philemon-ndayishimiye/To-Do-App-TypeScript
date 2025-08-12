@@ -14,7 +14,7 @@ export const TodoReducer = (
       ];
 
     case "Remove Task":
-      return Todos.filter((todo) => todo.name === action.payload.id);
+      return Todos.filter((todo) => todo.id !== action.payload.id);
     default:
       return Todos;
   }
